@@ -10,7 +10,13 @@ class Solution:
         # write code here
         return sum([(n>>i & 1) for i in range(0,32)])
     
-    
+class Solution:
+    def NumberOf1(self, n):
+        # write code here
+        sum1 = 0
+        for i in range(32):
+            sum1 = sum1 + (n>>i&1)
+        return sum1    
 
 
 class Solution:
