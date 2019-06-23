@@ -22,11 +22,11 @@ class Solution:
         last = None
           
         while pHead:
-            tmp = pHead.next
-            pHead.next = last
-            last = pHead
-            pHead = tmp
-        return last
+            tmp = pHead.next   #指向原序的反转点 phead 的下一点（next）,即反转后的上一点
+            pHead.next = last  # 进行反转点 phead 的next 重赋值，即赋值为原序列的上一点
+            last = pHead       #反转完成， last 指针移动，从原序列的上一点，转移至当前点
+            pHead = tmp        #反转完成， 当前点 指针移动，从原序列的当前点，转移至下一点
+        return last            #last 从none开始指
     
     
     
