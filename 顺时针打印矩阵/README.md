@@ -11,4 +11,4 @@
 循环结构，边删除，边添加，合理利用pop()函数  
 data[::-1],为反转data元素  
 若data1 = [[1,2],[3,4]], 则data1[::-1] 为 [[3,4],[1,2]]  
-data + data1 效果，等同于 data.append(data1)
+data + data1 效果，等同于 data.extend(data1)
