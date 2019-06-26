@@ -29,3 +29,25 @@ class Solution:
         if i < length-1:
             right = self.VerifySquenceOfBST(sequence[i:-1])
         return left and right
+    
+  
+class Solution:
+    def VerifySquenceOfBST(self, sequence):
+        # write code here
+        if not sequence:
+            return False
+        node = sequence[-1]              #找根节点
+        for i in range(len(sequence)):   #找左树右树分割点[0,i],[i,-1]
+            if sequence[i] > node:
+                break
+        for data in sequence[i:-1]:
+            if data < node:
+                return False
+        left = True
+        if i > 0:
+            left = self.VerifySquenceOfBST(sequence[0:i])
+        right = True
+        if i < len(sequence)-1:
+            right = self.VerifySquenceOfBST(sequence[i:-1])
+        return left and right
+        
