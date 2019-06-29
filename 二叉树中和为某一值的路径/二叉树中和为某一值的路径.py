@@ -23,4 +23,5 @@ class Solution:
         right = self.FindPath(root.right, expectNumber-root.val)
         for i in left+right:
             res.append([root.val]+i)
-        return res
+      #  return res  也可以，但不懂为什么
+        return sorted(res, key=lambda x:-len(x))    
