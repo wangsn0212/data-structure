@@ -10,7 +10,7 @@ class Solution:
         # write code here
         max_sum, cur_sum = -0xffffff, 0
         for i in array:
-            if cur_sum <= 0:
+            if cur_sum <= 0:  #此前为负值，则加上任何一数，都比当前值要小
                 cur_sum = i
             else:
                 cur_sum += i
@@ -31,3 +31,14 @@ class Solution:
                 a = sum(array[i:j])
                 sumlist.append(a)
         return max(sumlist)
+    
+
+class Solution:
+    def FindGreatestSumOfSubArray(self, array):
+        # write code here
+        n = len(array)
+        dp = [ i for i in array]
+        for i in range(1,n):
+            dp[i] = max(dp[i-1]+array[i],array[i])
+         
+        return max(dp)
